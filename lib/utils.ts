@@ -67,9 +67,9 @@ export const formatDateTime = (dateString: Date) => {
 };
 
 export function formatAmount(amount: number): string {
-  const formatter = new Intl.NumberFormat("en-ZA", {
+  const formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
-    currency: "ZAR",
+    currency: "USD",
     minimumFractionDigits: 2,
   });
 
@@ -201,10 +201,10 @@ export const authFormSchema = (type: string) => z.object({
   lastName: type === 'sign-in' ? z.string().optional() :  z.string().min(3),
   address1: type === 'sign-in' ? z.string().optional() :  z.string().max(50),
   city: type === 'sign-in' ? z.string().optional() :  z.string().max(50),
-  stateProvince: type === 'sign-in' ? z.string().optional() :  z.string().max(3),
-  postalCode: type === 'sign-in' ? z.string().optional() :  z.string().min(3).max(6),
+  state: type === 'sign-in' ? z.string().optional() :  z.string().max(3),
+  postalCode: type === 'sign-in' ? z.string().optional() :  z.string().min(5).max(9),
   dateOfBirth: type === 'sign-in' ? z.string().optional() :  z.string().min(3),
-  id: type === 'sign-in' ? z.string().optional() :  z.string().min(3).max(13),
+  ssn: type === 'sign-in' ? z.string().optional() :  z.string().min(3).max(13),
   // both
   email: z.string().email(),
   password: z.string().min(8),
