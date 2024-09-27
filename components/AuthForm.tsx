@@ -56,7 +56,7 @@ const AuthForm = ({type}: {type: string}) => {
             const userData = {
                 firstName: data.firstName!,
                 lastName: data.lastName!,
-                address1: data.address1,
+                address1: data.address1!,
                 city: data.city!,
                 state: data.state!,
                 postalCode: data.postalCode!,
@@ -86,7 +86,6 @@ const AuthForm = ({type}: {type: string}) => {
         setIsLoading(false);
     }
   }
-
 
   return (
     <section className='auth-form'>
@@ -120,8 +119,9 @@ const AuthForm = ({type}: {type: string}) => {
         </header>
         {user ? (
             <div className='flex flex-col gap-4'>
-                <PlaidLink user={user} variant="primary" />
-
+                <PlaidLink 
+                user={user} 
+                variant="primary" />
             </div>
         ): (
             <>
