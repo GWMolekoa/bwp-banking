@@ -163,13 +163,13 @@ const AuthForm = ({type}: {type: string}) => {
                                     control={form.control} 
                                     name='state' 
                                     label='State' 
-                                    placeholder='Example: NY/Gauteng' 
+                                    placeholder='Ex: NY, GA, AL, AK ' 
                                 />
                                 <CustomInput 
                                     control={form.control} 
                                     name='postalCode' 
                                     label='Postal Code' 
-                                    placeholder='Example: 0123' 
+                                    placeholder='Ex: 0123' 
                                 />
                             </div>  
                             <div className='flex gap-4'>  
