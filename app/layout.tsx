@@ -12,8 +12,11 @@ const ibmPlexSerif = IBM_Plex_Serif({
 })
 
 export const metadata: Metadata = {
-  title: "BWP",
-  description: "BWP (Bank With Pvle_TheEngineer) Is A Modern Banking Platform For Everyone.",
+  title: "bwp",
+  description: "BWP Is A Modern Banking Platform For Everyone",
+  icons: {
+    icon: 'icons/logo.svg'
+  }
 };
 
 export default function RootLayout({

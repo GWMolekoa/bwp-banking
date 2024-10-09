@@ -25,8 +25,7 @@ export default async function RootLayout({
             width={30}
             height={30}
             alt="menu logo"/>
-
-            <div>
+          <div>
               <MobileNav user={loggedIn} />
             </div>
           </div>

@@ -97,7 +97,7 @@ const AuthForm = ({type}: {type: string}) => {
                     height={34} 
                     alt="BWP Logo"
                 />
-                <h1 className="text-26 font-ibm-plex-serif font-bold text-black-1">Bank With PvleTheEngineer</h1>
+                <h1 className="text-26 font-ibm-plex-serif font-bold text-black-1">bwp</h1>
             </Link>
 
             <div className='flex flex-col gp-1 md:gap-3'>
@@ -182,8 +182,8 @@ const AuthForm = ({type}: {type: string}) => {
                                 <CustomInput 
                                     control={form.control} 
                                     name='ssn' 
-                                    label='SSN' 
-                                    placeholder='Example: 9001011234567' 
+                                    label='ID(Last 4-digits)' 
+                                    placeholder='Example: 4567' 
                                 />
                             </div>
                             </>
