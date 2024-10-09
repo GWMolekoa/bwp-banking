@@ -68,6 +68,7 @@ export const getAccounts = async ({ userId }: getAccountsProps) => {
 };
 
 // Get one bank account
+// Get one bank account
 export const getAccount = async ({ appwriteItemId }: getAccountProps) => {
   try {
     // get bank from db
@@ -84,7 +85,8 @@ export const getAccount = async ({ appwriteItemId }: getAccountProps) => {
       bankId: bank.$id,
     });
 
-    const transferTransactions = transferTransactionsData.documents.map(
+    // Ensure transactions are always iterable by defaulting to an empty array
+    const transferTransactions = transferTransactionsData?.documents.map(
       (transferData: Transaction) => ({
         id: transferData.$id,
         name: transferData.name!,
@@ -94,16 +96,17 @@ export const getAccount = async ({ appwriteItemId }: getAccountProps) => {
         category: transferData.category,
         type: transferData.senderBankId === bank.$id ? "debit" : "credit",
       })
-    );
+    ) || [];
 
     // get institution info from plaid
     const institution = await getInstitution({
       institutionId: accountsResponse.data.item.institution_id!,
     });
 
+    // Fetch Plaid transactions
     const transactions = await getTransactions({
       accessToken: bank?.accessToken,
-    });
+    }) || [];  // Default to an empty array if null or undefined
 
     const account = {
       id: accountData.account_id,
@@ -118,7 +121,7 @@ export const getAccount = async ({ appwriteItemId }: getAccountProps) => {
       appwriteItemId: bank.$id,
     };
 
-    // sort transactions by date such that the most recent transaction is first
+    // Merge and sort all transactions by date
     const allTransactions = [...transactions, ...transferTransactions].sort(
       (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
     );
@@ -129,8 +132,10 @@ export const getAccount = async ({ appwriteItemId }: getAccountProps) => {
     });
   } catch (error) {
     console.error("An error occurred while getting the account:", error);
+    return null;
   }
 };
+
 
 // Get bank info
 export const getInstitution = async ({

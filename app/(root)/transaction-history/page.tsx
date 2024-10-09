@@ -8,7 +8,15 @@ import React from 'react'
 
 const TransactionHistory = async ({ searchParams: {id, page}}: SearchParamProps) => {
     const currentPage = Number(page as string) || 1;
+
     const loggedIn =  await getLoggedInUser(); 
+
+    // Check if the logged-in user is valid before accessing $id
+    if (!loggedIn || !loggedIn.$id) {
+      console.error("User is not logged in or user ID is missing.");
+      return; // Exit early if there's no logged-in user
+    }
+
     const accounts = await getAccounts({ userId: loggedIn.$id })
 
     if(!accounts) return;
