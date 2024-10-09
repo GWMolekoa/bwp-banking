@@ -39,7 +39,7 @@ const MobileNav = ({user}: MobileNavProps) => {
                     alt="BWP Logo"
                     
                 />
-                <h1 className="text-26 font-ibm-plex-serif font-bold text-black-1">Bank With PvleTheEngineer</h1>
+                <h1 className="text-26 font-ibm-plex-serif font-bold text-black-1">bwp</h1>
                 </Link>
 
                 <div className="mobilenav-sheet">
