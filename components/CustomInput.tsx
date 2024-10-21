@@ -68,6 +68,19 @@ const CustomInput = ({control, name, label, placeholder}: CustomInput) => {
                                 minDate={new Date(1900, 0, 1)} // Set minimum date for year
                                 maxDate={new Date()} // Set maximum date as today
                             />
+                        ) : name === "state" ? (
+                            // Render dropdown for State field
+                            <select
+                                {...field}
+                                className="input-class h-10 text-justify pl-2"
+                            >
+                                <option value="">Select State</option>
+                                <option value="NY">NY</option>
+                                <option value="GA">GA</option>
+                                <option value="FL">FL</option>
+                                <option value="LA">LA</option>
+                                <option value="TX">TX</option>
+                            </select>
                         ) : (
                         
                         <div className="relative">

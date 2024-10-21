@@ -158,19 +158,23 @@ const AuthForm = ({type}: {type: string}) => {
                                     placeholder='Enter your city' 
                                 />
 
-                            <div className='flex gap-4'>    
-                                <CustomInput 
-                                    control={form.control} 
-                                    name='state' 
-                                    label='State' 
-                                    placeholder='Ex: NY, GA, AL, AK ' 
-                                />
-                                <CustomInput 
-                                    control={form.control} 
-                                    name='postalCode' 
-                                    label='Postal Code' 
-                                    placeholder='Ex: 0123' 
-                                />
+                            <div className='flex gap-4'>  
+                                <div className="w-full"> 
+                                    <CustomInput 
+                                        control={form.control} 
+                                        name='state' 
+                                        label='State' 
+                                        placeholder='' 
+                                    />
+                                </div>
+                                <div className="w-full">
+                                    <CustomInput 
+                                        control={form.control} 
+                                        name='postalCode' 
+                                        label='Postal Code (Enter 5-digits)' 
+                                        placeholder='Ex: 00123' 
+                                    />
+                                </div>
                             </div>  
                             <div className='flex gap-4'>  
                                 <CustomInput 
