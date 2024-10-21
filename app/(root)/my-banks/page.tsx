@@ -27,13 +27,9 @@ const MyBanks = async () => {
                 userName={loggedIn?.firstName}
               />
             ))}
-
           </div>
-
         </div>
-
       </div>
-
     </section>
   )
 }
