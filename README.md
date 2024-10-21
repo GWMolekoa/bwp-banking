@@ -68,12 +68,12 @@ The page is divided into three sections as follows:
 
 - A Right-Sidebar displaying the logged-in user's details, their connected bank account displayed as a card and a categories section below to display the transaction types, i.e Transfer, Travel, Food etc.
 
-# To View Transactions
+## To View Transactions
 - When you sign in, the a list of transactions will appear on the transactions table on the dashboard when toggling accounts(if there's more than one). However, to view the full transaction history of the account, Click on the card on the Right-Sidebar and you will be directed to the 'Transaction History' page where you'll see all transactions on the account.
 
 - Alternatively, you can navigate to 'My Banks' where your accounts will be displayed. Click on the account(or card) of your choice and you'll be directed to the 'Transactions History' page of the account.
 
-# To Perform A Transaction
+## To Perform A Transaction
 - To see this app work in real-time and perform a transaction between accounts, we must add an additional account.
 - On the Left-Sidebar, Click on "Connect Bank" and you'll perform the same procedure as outlined in steps 4-9. Wait a few seconds and the dashboard will reload with your additional account. 
 
