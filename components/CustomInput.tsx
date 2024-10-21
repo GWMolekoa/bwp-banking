@@ -59,7 +59,7 @@ const CustomInput = ({control, name, label, placeholder}: CustomInput) => {
                                     field.onChange(date ? format(date, 'yyyy-MM-dd') : ''); // Update field value
                                 }}
                                 dateFormat="yyyy-MM-dd"
-                                className="input-class h-10 text-justify pl-2" // Ensure consistent styling
+                                className="input-class w-full h-10 text-justify pl-2" // Ensure consistent styling
                                 placeholderText={placeholder}
                                  // Set full width for the wrapper
                                 showMonthDropdown // Enable month dropdown
@@ -72,7 +72,7 @@ const CustomInput = ({control, name, label, placeholder}: CustomInput) => {
                             // Render dropdown for State field
                             <select
                                 {...field}
-                                className="input-class h-10 text-justify pl-2"
+                                className="input-class w-full h-10 text-justify pl-2"
                             >
                                 <option value="">Select State</option>
                                 <option value="NY">NY</option>

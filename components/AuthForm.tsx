@@ -176,19 +176,23 @@ const AuthForm = ({type}: {type: string}) => {
                                     />
                                 </div>
                             </div>  
-                            <div className='flex gap-4'>  
-                                <CustomInput 
-                                    control={form.control} 
-                                    name='dateOfBirth' 
-                                    label='Date of Birth' 
-                                    placeholder='yyyy-mm-dd' 
-                                />
-                                <CustomInput 
-                                    control={form.control} 
-                                    name='ssn' 
-                                    label='ID(Last 4-digits)' 
-                                    placeholder='Example: 4567' 
-                                />
+                            <div className='flex gap-4'>
+                                <div className="w-full">  
+                                    <CustomInput 
+                                        control={form.control} 
+                                        name='dateOfBirth' 
+                                        label='Date of Birth' 
+                                        placeholder='yyyy-mm-dd' 
+                                    />
+                                </div>
+                                <div className="w-full"> 
+                                    <CustomInput 
+                                        control={form.control} 
+                                        name='ssn' 
+                                        label='ID(Last 4-digits)' 
+                                        placeholder='Example: 4567' 
+                                    />
+                                </div>
                             </div>
                             </>
                         )}
